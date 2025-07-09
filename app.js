@@ -4,12 +4,14 @@ window.onload = function () {
   
     const randomSuit = suits[Math.floor(Math.random() * suits.length)];
     const randomValue = values[Math.floor(Math.random() * values.length)];
+  
+    const card = document.getElementById("card");
+  
+    card.querySelector(".top-suit").textContent = randomSuit;
+    card.querySelector(".number").textContent = randomValue;
+    card.querySelector(".bottom-suit").textContent = randomSuit;
+  
     const isRed = randomSuit === "♥" || randomSuit === "♦";
-  
-    document.querySelector(".top-suit").textContent = randomSuit;
-    document.querySelector(".number").textContent = randomValue;
-    document.querySelector(".bottom-suit").textContent = randomSuit;
-  
-    document.getElementById("card").style.color = isRed ? "red" : "black";
+    card.style.color = isRed ? "red" : "black";
   };
   
